@@ -1,7 +1,8 @@
 const { app } = require("./app");
 
-const PORT = 3001;
+const PORT = Number(process.env.PORT) || 3001;
+const HOST = "0.0.0.0";
 
-app.listen(PORT, () => {
-  console.log(`API server listening on http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`API server listening on http://${HOST}:${PORT}`);
 });
