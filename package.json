@@ -7,7 +7,7 @@
     "check:no-localhost-assets": "node scripts/check-no-localhost-assets.js",
     "prebuild": "npm run check:no-localhost-assets",
     "dev": "node server/dev.mjs",
-    "serve": "npm run build && node server/serve.js",
+    "serve": "node server/serve.js",
     "dev:ui": "npm run check:no-localhost-assets && vite --host",
     "dev:api": "node server/index.js",
     "build": "vite build",
