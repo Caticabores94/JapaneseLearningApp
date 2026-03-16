@@ -379,6 +379,13 @@ body,
   padding: 14px 16px;
 }
 
+.pricing-card-header {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
 .account-plan-card p,
 .pricing-card p,
 .pricing-card h3 {
@@ -394,6 +401,20 @@ body,
 .pricing-panel {
   display: grid;
   gap: 12px;
+}
+
+.plan-status-badge {
+  align-items: center;
+  background: #e0ecff;
+  border: 1px solid rgba(47, 107, 255, 0.18);
+  border-radius: 999px;
+  color: var(--desktop-color-brand-primary, #2f6bff);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 26px;
+  padding: 0 10px;
 }
 
 .redeem-form {

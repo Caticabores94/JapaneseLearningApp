@@ -1436,6 +1436,7 @@ function AuthModal({
 
   const title =
     mode === "pricing" ? "Unlock full app" : user ? "Account" : mode === "login" ? "Log in" : "Create account";
+  const fullAccess = hasFullAccess(user);
 
   return (
     <div className="auth-modal-backdrop" onClick={onClose}>
@@ -1457,18 +1458,27 @@ function AuthModal({
         {mode === "pricing" ? (
           <div className="pricing-panel">
             <div className="pricing-card is-trial">
-              <h3>Free trial</h3>
+              <div className="pricing-card-header">
+                <h3>Free trial</h3>
+                {!fullAccess ? <span className="plan-status-badge">Current</span> : null}
+              </div>
               <p>Try the app with the first {FREE_KANJI_LEVEL_LIMIT} kanji levels and the first {FREE_KANA_LEVEL_LIMIT} levels of hiragana and katakana.</p>
             </div>
             <div className="pricing-card is-full">
-              <h3>Full experience</h3>
+              <div className="pricing-card-header">
+                <h3>Full experience</h3>
+                {fullAccess ? <span className="plan-status-badge">Current</span> : null}
+              </div>
               <p>Unlock every level, all study paths, and the full practice catalog with a one-time payment.</p>
               <p className="pricing-note">
                 Checkout is not wired yet. This menu is ready for a payment integration step next.
               </p>
             </div>
             <div className="pricing-card is-code">
-              <h3>Redeem access key</h3>
+              <div className="pricing-card-header">
+                <h3>Redeem access key</h3>
+                {fullAccess ? <span className="plan-status-badge">Active</span> : null}
+              </div>
               <p>Use your private unlock key to grant full app access without payment.</p>
               {user ? (
                 <form
@@ -1518,9 +1528,12 @@ function AuthModal({
               </div>
             </div>
             <div className="account-plan-card">
-              <strong>{hasFullAccess(user) ? "Full access" : "Free trial"}</strong>
+              <div className="pricing-card-header">
+                <strong>{fullAccess ? "Full access" : "Free trial"}</strong>
+                <span className="plan-status-badge">Current</span>
+              </div>
               <p>
-                {hasFullAccess(user)
+                {fullAccess
                   ? "This account has the full experience unlocked."
                   : `Trial includes kanji levels 1-${FREE_KANJI_LEVEL_LIMIT} and kana levels 1-${FREE_KANA_LEVEL_LIMIT}.`}
               </p>
