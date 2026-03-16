@@ -2269,12 +2269,6 @@ function ProgressView({ stats, onSelectKanji, onStartPractice, track, onTrackCha
         <span>{totalMinutes} Minutes</span>
       </p>
 
-      <div className="progress-practiced-card">
-        <p>
-          <strong>You&apos;ve practiced:</strong> {cards.length} kanji | {practicedLevelCount} Levels | {totalMinutes} minutes
-        </p>
-      </div>
-
       <div className="progress-filter-row">
         <label className="progress-select-wrap">
           <select value={levelFilter} onChange={(e) => setLevelFilter(e.target.value)} className="progress-select">

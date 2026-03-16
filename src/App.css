@@ -1759,25 +1759,6 @@ body,
   color: #4338ca;
 }
 
-.progress-practiced-card {
-  background: #fff;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
-  padding: 12px;
-}
-
-.progress-practiced-card p {
-  color: #3b475f;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  margin: 0;
-}
-
-.progress-practiced-card strong {
-  font-weight: 600;
-}
-
 .progress-filter-row {
   display: grid;
   gap: 8px;
